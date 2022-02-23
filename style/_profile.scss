@@ -1,0 +1,62 @@
+.profile {
+    display: flex;
+    margin: 0 auto 20px auto;
+    width: 93%;
+    &_avatar {
+        display: flex;
+        align-items: center;
+        width: 293px;
+        height: 300px;
+        margin-right: 5%;
+        position: relative;
+        box-sizing: border-box;
+        $border: 5px;
+        color: #FFF;
+        background: url('../assets/images/avatar.jpg') no-repeat center / 100%;
+        background-clip: padding-box;
+        border: solid $border transparent;
+        border-radius: 1em;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            margin: -$border;
+            border-radius: inherit;
+            background: linear-gradient(to right, red, orange);
+        }
+    }
+    &_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        &__name {
+            font-size: 25px;
+            font-weight: 600;
+        }
+        &__text {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .profile {
+        align-items: center;
+        flex-direction: column;
+        &_avatar {
+            margin: 0;
+        }
+        &_info {
+            align-items: center;
+            &__name {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
